@@ -59,9 +59,6 @@ pipeline {
 			}
 		}
 
-
-
-
 		stage('install metrics server') {
 			steps {
 				withAWS(region:'us-east-1', credentials:'pagu18') {

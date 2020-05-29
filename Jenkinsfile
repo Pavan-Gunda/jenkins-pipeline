@@ -49,7 +49,7 @@ pipeline {
 			}
 		}
 
-		stage('set label') {
+		stage('install metrics server') {
 			steps {
 				withAWS(region:'us-east-1', credentials:'pagu18') {
 					sh '''
@@ -59,7 +59,7 @@ pipeline {
 			}
 		}
 
-		stage('autoscaler') {
+		stage('assign hpa blue') {
 			steps {
 				withAWS(region:'us-east-1', credentials:'pagu18') {
 					sh '''
@@ -69,7 +69,7 @@ pipeline {
 			}
 		}
 
-		stage('autoscaler') {
+		stage('assign hpa green') {
 			steps {
 				withAWS(region:'us-east-1', credentials:'pagu18') {
 					sh '''
@@ -89,7 +89,7 @@ pipeline {
 			}
 		}
 
-		stage('add pod disruption budget') {
+		stage('add pod disruption budget green') {
 			steps {
 				withAWS(region:'us-east-1', credentials:'pagu18') {
 					sh '''

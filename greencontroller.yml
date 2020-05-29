@@ -1,0 +1,32 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: green
+spec:
+  selector:
+    matchLabels:
+      app: green
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: green
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: "disk"
+                operator: In
+                values: ["ssd"]
+      containers:
+      - name: green
+        image: pavangunda66/helloworld
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - name: http-server
+          containerPort: 80

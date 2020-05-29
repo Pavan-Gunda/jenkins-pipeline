@@ -1,0 +1,9 @@
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget 
+metadata:
+  name: pdbblue
+spec:
+  minAvailable: 3
+  selector:
+    matchLabels:
+      app: green

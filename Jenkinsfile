@@ -33,7 +33,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-1', credentials:'pagu18') {
 					sh '''
-						kubectl label node --all "disk=hdd"
+						kubectl label node --all "disk=ssd"
 					'''
 				}
 			}

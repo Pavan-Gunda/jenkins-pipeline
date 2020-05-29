@@ -63,7 +63,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-1', credentials:'pagu18') {
 					sh '''
-						kubectl apply -f hpablue.yaml
+						kubectl apply -f hpablue.yml
 					'''
 				}
 			}
@@ -73,7 +73,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-1', credentials:'pagu18') {
 					sh '''
-						kubectl apply -f hpagreen.yaml
+						kubectl apply -f hpagreen.yml
 					'''
 				}
 			}
@@ -82,8 +82,8 @@ pipeline {
 		stage('add pod disruption budget') {
 			steps {
 				withAWS(region:'us-east-1', credentials:'pagu18') {
-					sh ''
-						kubectl apply -f pdbblue.yaml
+					sh '''
+						kubectl apply -f pdbblue.yml
 					'''
 				}
 			}
@@ -92,8 +92,8 @@ pipeline {
 		stage('add pod disruption budget') {
 			steps {
 				withAWS(region:'us-east-1', credentials:'pagu18') {
-					sh ''
-						kubectl apply -f pdbgreen.yaml
+					sh '''
+						kubectl apply -f pdbgreen.yml
 					'''
 				}
 			}
@@ -103,7 +103,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-1', credentials:'pagu18') {
 					sh '''
-						kubectl apply -f blueservice.yaml
+						kubectl apply -f blueservice.yml
 					'''
 				}
 			}
@@ -119,7 +119,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-1', credentials:'pagu18') {
 					sh '''
-						kubectl apply -f greenservice.yaml
+						kubectl apply -f greenservice.yml
 					'''
 				}
 			}

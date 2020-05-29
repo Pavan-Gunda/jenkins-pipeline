@@ -33,7 +33,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-1', credentials:'pagu18') {
 					sh '''
-						kubectl label node --all "disk2=ssd"
+						kubectl label node --all "disk=ssd" --overwrite=true
 					'''
 				}
 			}
@@ -48,6 +48,19 @@ pipeline {
 				}
 			}
 		}
+
+		stage('deploy green container') {
+			steps {
+				withAWS(region:'us-east-1', credentials:'pagu18') {
+					sh '''
+						kubectl apply -f greencontroller.yml
+					'''
+				}
+			}
+		}
+
+
+
 
 		stage('install metrics server') {
 			steps {

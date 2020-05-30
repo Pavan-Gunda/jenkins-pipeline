@@ -22,7 +22,7 @@ spec:
                 values: ["ssd"]
       containers:
       - name: green
-        image: pavangunda66/helloworld
+        image: pavangunda66/calc
         resources:
           requests:
             cpu: 50m

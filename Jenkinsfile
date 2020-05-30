@@ -1,18 +1,12 @@
 pipeline {
 	agent any
 	stages {
-
-		stage('Lint HTML') {
-			steps {
-				sh 'tidy -q -e *.html'
-			}
-		}
 		
 		stage('Build Docker Image') {
 			steps {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
-						docker build -t pavangunda66/hellovadi .
+						docker build -t pavangunda66/calc .
 					'''
 				}
 			}
@@ -23,7 +17,7 @@ pipeline {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
 						docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-						docker push pavangunda66/hellovadi
+						docker push pavangunda66/hellocalc
 					'''
 				}
 			}

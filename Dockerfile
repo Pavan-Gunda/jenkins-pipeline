@@ -1,9 +1,13 @@
-FROM nginx
+FROM tiangolo/uwsgi-nginx-flask:python3.6
 
-## Step 1:
-RUN rm /usr/share/nginx/html/index.html
+WORKDIR /app
+RUN rm /app/*
 
-## Step 2:
-# Copy source code to working directory
-COPY index.html /usr/share/nginx/html
+ADD ./prestart.sh /app
+ADD ./cal.py /app
+ADD ./uwsgi.ini /app
+
+EXPOSE 80
+
+RUN chmod 1777 /tmp
 

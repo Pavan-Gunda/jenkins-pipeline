@@ -25,7 +25,7 @@ spec:
         image: pavangunda66/helloworld
         resources:
           requests:
-            cpu: 100m
+            cpu: 50m
             memory: 100Mi
         ports:
         - name: http-server

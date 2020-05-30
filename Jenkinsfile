@@ -4,7 +4,7 @@ pipeline {
 
 	  stage('Lint python code') {
 		  steps {
-			   sh 'pylint -q -e *.py'
+			   sh 'pylint *.py'
 		  }
 	  }
 

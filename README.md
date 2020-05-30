@@ -27,7 +27,7 @@ these are two pipelines I have created
 
 - [clusterformation](https://github.com/ph4n666/cluster-formation-) - creates a kubernetes cluster using eksctl and updates the Jenkins server the respective config file.
 
-![img-1](images/https://github.com/ph4n666/jenkins-pipeline/blob/master/images/createcluster.png)
+![img-1](images/createcluster.png)
 
 - Jenkins Pipeline(This is the project)
 

@@ -1,7 +1,13 @@
 pipeline {
 	agent any
 	stages {
-		
+
+	  stage('Lint python code') {
+		  steps {
+			   sh 'pylint -q -e *.py'
+		  }
+	  }
+
 		stage('Build Docker Image') {
 			steps {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
@@ -10,7 +16,7 @@ pipeline {
 					'''
 				}
 			}
-		}
+    }
 
 		stage('Push Image To Dockerhub') {
 			steps {

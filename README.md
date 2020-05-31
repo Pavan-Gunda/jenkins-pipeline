@@ -15,7 +15,7 @@ you will need
 - [aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html)
 - [eksctl](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html)
 
-Installed and configured using your credentials and docker being a sudoer, add this repository to your jenkins pipeline and the deployment is automated in jenkins 
+Installed and configured using your credentials and docker being a sudoer, add this repository to your jenkins pipeline and the deployment is automated in jenkins
 
 
 ## Deployment strategy
@@ -49,6 +49,8 @@ TO use ingress expose the application through NodePort and Run
 - Kubectl apply -f ingress.yml
 
 I haven't used it as I do not have a registered domain name.
+
+Also, Please refer to images of deployment for a better understanding 
 
 
 ## Contributing

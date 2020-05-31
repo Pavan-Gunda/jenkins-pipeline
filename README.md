@@ -2,12 +2,12 @@
 
 The project's goal is to deploy a microservice in a highly available Kubernetes cluster.
 
-The microservice I choose is a flask based calculator that is containerized and deployed in a Kubernetes cluster through a Jenkins pipeline. I ensured Node affinity, Pod Disruption budget, offload tls at the load balancer/ingress are working before it is served with traffic.
+The microservice I choose is a flask based calculator that is containerized and deployed in a Kubernetes cluster through a Jenkins pipeline. I ensured Node affinity, Pod Disruption budget, offload TLS at the load balancer/ingress are working before it is served with traffic.
 
 
 ## To Recreate this project
 
-you will need
+You will need
 
 - [Jenkins](https://www.jenkins.io/doc/book/installing/)
 - [Docker](https://docs.docker.com/engine/install/ubuntu/)
@@ -15,17 +15,17 @@ you will need
 - [aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html)
 - [eksctl](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html)
 
-Installed and configured using your credentials and docker being a sudoer, add this repository to your jenkins pipeline and the deployment is automated in jenkins
+Installed and configured using your credentials and docker being a Sudoer, add this repository to your Jenkins pipeline and the deployment is automated in Jenkins
 
 
 ## Deployment strategy
 
-I used blue/green deployment strategy, as it reduces downtime by running two identical environments with only one serving at a given time
+I preferred blue/green deployment strategy, as it reduces downtime by running two identical environments with only one serving at a given time
 
 
-these are two pipelines I have created
+These are two pipelines I have created
 
-- [cluster formation](https://github.com/ph4n666/cluster-formation-) - creates a kubernetes cluster using eksctl and updates the Jenkins server the respective config file.
+- [cluster formation](https://github.com/ph4n666/cluster-formation-) - creates a Kubernetes cluster using eksctl and updates the Jenkins server with the respective config file.
 
 ![img-1](images/createcluster.png)
 
@@ -34,7 +34,7 @@ these are two pipelines I have created
 ![img-2](images/pipeline.png)
 
 
-this pipeline does the following steps
+This pipeline does the following steps
 
 1. builds and pushes the docker container
 2. sets labels to nodes so as to use them in node affinity
@@ -43,14 +43,14 @@ this pipeline does the following steps
 5. adds pod disruption budget to both blue and green deployments
 6. exposes the deployments using a load balancer port 8080
 
-## note
-TO use ingress expose the application through NodePort and Run
+## Note
+To use ingress, expose the application through NodePort and Run
 
 - Kubectl apply -f ingress.yml
 
 I haven't used it as I do not have a registered domain name.
 
-Also, Please refer to images of deployment for a better understanding 
+Also, refer to images of deployment for a better understanding
 
 
 ## Contributing

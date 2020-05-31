@@ -41,7 +41,15 @@ this pipeline does the following steps
 3. deploys blue and green deployments
 4. installs metrics server and uses it in horizontal pod autoscaling
 5. adds pod disruption budget to both blue and green deployments
-6. exposes the deployments using a load balancer port 8080 
+6. exposes the deployments using a load balancer port 8080
+
+## note
+
+```python
+TO use ingress expose the application through NodePort and Run
+Kubectl apply -f ingress.yml
+
+I haven't used it as I do not have a registered domain name.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

@@ -50,5 +50,5 @@ Kubectl apply -f ingress.yml
 I haven't used it as I do not have a registered domain name.
 
 
-##Contributing
+## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

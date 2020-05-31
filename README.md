@@ -44,12 +44,11 @@ this pipeline does the following steps
 6. exposes the deployments using a load balancer port 8080
 
 ## note
-
-```python
 TO use ingress expose the application through NodePort and Run
 Kubectl apply -f ingress.yml
 
 I haven't used it as I do not have a registered domain name.
 
-## Contributing
+
+##Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

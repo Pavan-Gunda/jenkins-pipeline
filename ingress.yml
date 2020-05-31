@@ -5,15 +5,15 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/listen-ports:  '[{"HTTP": 80}, {"HTTPS":443}]'
-    alb.ingress.kubernetes.io/group: myapp
+    alb.ingress.kubernetes.io/listen-ports:  '[{"HTTP": 8080}, {"HTTPS":443}]'
+    alb.ingress.kubernetes.io/group: blue
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-1:xxx:certificate/xxx
 spec:
   rules:
-    - host: app.mydomain.com
+    - host: blueapp.com
       http:
         paths:
           - path: /*
             backend:
-              serviceName: myapp
+              serviceName: blue 
               servicePort: 80

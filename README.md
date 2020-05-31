@@ -31,6 +31,9 @@ these are two pipelines I have created
 
 - Jenkins Pipeline(This is the project)
 
+![img-2](images/pipeline.png)
+
+
 this pipeline does the following steps
 
 1. builds and pushes the docker container

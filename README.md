@@ -15,7 +15,7 @@ you will need
 - [aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html)
 - [eksctl](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html)
 
-Installed and configured using your credentials and docker being a sudoer
+Installed and configured using your credentials and docker being a sudoer, add this repository to your jenkins pipeline and the deployment is automated in jenkins 
 
 
 ## Deployment strategy

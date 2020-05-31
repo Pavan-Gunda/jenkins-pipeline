@@ -45,7 +45,8 @@ this pipeline does the following steps
 
 ## note
 TO use ingress expose the application through NodePort and Run
-Kubectl apply -f ingress.yml
+
+- Kubectl apply -f ingress.yml
 
 I haven't used it as I do not have a registered domain name.
 

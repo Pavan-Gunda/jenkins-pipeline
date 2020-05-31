@@ -25,7 +25,7 @@ I used blue/green deployment strategy, as it reduces downtime by running two ide
 
 these are two pipelines I have created
 
-- [clusterformation](https://github.com/ph4n666/cluster-formation-) - creates a kubernetes cluster using eksctl and updates the Jenkins server the respective config file.
+- [cluster formation](https://github.com/ph4n666/cluster-formation-) - creates a kubernetes cluster using eksctl and updates the Jenkins server the respective config file.
 
 ![img-1](images/createcluster.png)
 
@@ -41,4 +41,7 @@ this pipeline does the following steps
 3. deploys blue and green deployments
 4. installs metrics server and uses it in horizontal pod autoscaling
 5. adds pod disruption budget to both blue and green deployments
-6. exposes the deployments using a load balancer
+6. exposes the deployments using a load balancer port 8080 
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

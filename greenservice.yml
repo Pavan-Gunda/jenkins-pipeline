@@ -2,6 +2,9 @@
   kind: Service
   apiVersion: v1
   metadata:
+#   annotations:
+#  service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:eu-west-1:xxx:certificate/xxx
+#  service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "443"
     name: bluegreenlb
     labels:
       app: bluegreenlb
@@ -11,4 +14,7 @@
       targetPort: 80
     selector:
       app: green
+# - name: https
+#   port: 443
+#   targetPort: 8080
     type: LoadBalancer
